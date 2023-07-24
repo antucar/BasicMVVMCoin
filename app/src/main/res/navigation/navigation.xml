@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.basicmvvm.view.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.basicmvvm.view.SecondFragment"
+        android:label="SecondFragment" >
+        <action
+            android:id="@+id/action_secondFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="uuid"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_secondFragment_to_coinDetailFragment"
+            app:destination="@id/coinDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coinDetailFragment"
+        android:name="com.example.basicmvvm.view.CoinDetailFragment"
+        android:label="fragment_coin_detail"
+        tools:layout="@layout/fragment_coin_detail" >
+        <action
+            android:id="@+id/action_coinDetailFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+</navigation>
