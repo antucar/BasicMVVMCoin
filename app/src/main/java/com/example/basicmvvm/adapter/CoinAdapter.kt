@@ -46,7 +46,7 @@ class CoinAdapter(val coinlist: ArrayList<CoinModel>): RecyclerView.Adapter<Coin
         val uuid = v.findViewById<TextView>(R.id.coinuuid).text.toString().toInt()
 
         // Provide the "uuid" argument when calling the action
-        val action = SecondFragmentDirections.actionSecondFragmentToCoinDetailFragment()
+        val action = SecondFragmentDirections.actionSecondFragmentToCoinDetailFragment(uuid)
         Navigation.findNavController(v).navigate(action)
     }
 
