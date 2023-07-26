@@ -85,6 +85,7 @@ dependencies {
     def preferencesVersion = '1.2.0'
 
 
+    implementation "androidx.cardview:cardview:1.0.0"
 
     implementation "androidx.room:room-runtime:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"

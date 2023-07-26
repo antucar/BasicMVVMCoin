@@ -50,7 +50,7 @@ class CoinDetailFragment : Fragment() {
     private fun observeLiveData() {
         viewModel.selectedCoin.observe(viewLifecycleOwner, Observer { coinList ->
             coinList?.let {
-                binding.selectedCoin = it
+                binding.coin = it
             }
         })
     }

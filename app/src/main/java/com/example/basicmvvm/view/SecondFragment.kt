@@ -49,7 +49,7 @@ class SecondFragment : Fragment() {
         swiperefreh.setOnRefreshListener {
             coinRecyclerView.visibility = View.GONE
             errormessage.visibility = View.GONE
-            viewModel.refreshData()
+            viewModel.refreshFromApi()
             swiperefreh.isRefreshing = false
         }
 
