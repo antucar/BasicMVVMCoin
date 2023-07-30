@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_mainFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_askAIFragment"
+            app:destination="@id/askAIFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -40,5 +43,14 @@
         <argument
             android:name="uuid"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/askAIFragment"
+        android:name="com.example.basicmvvm.view.AskAIFragment"
+        android:label="fragment_ask_a_i"
+        tools:layout="@layout/fragment_ask_a_i" >
+        <action
+            android:id="@+id/action_askAIFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

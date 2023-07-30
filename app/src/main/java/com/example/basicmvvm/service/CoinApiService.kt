@@ -34,6 +34,7 @@ class CoinApiService {
                         coinObject.get("priceUsd")?.let { if (it.isJsonNull) 0.0 else it.asDouble },
                         coinObject.get("changePercent24Hr")?.let { if (it.isJsonNull) 0.0 else it.asDouble },
                         coinObject.get("vwap24Hr")?.let { if (it.isJsonNull) 0.0 else it.asDouble }
+
                     )
                     coinList.add(coinModel)
                 }

@@ -30,9 +30,13 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val button = view.findViewById<Button>(R.id.button1)
-
+        val aibutton = view.findViewById<Button>(R.id.button2)
         button.setOnClickListener {
             view.findNavController().navigate(R.id.action_mainFragment_to_secondFragment)
         }
+        aibutton.setOnClickListener {
+            view.findNavController().navigate(R.id.action_mainFragment_to_askAIFragment)
+        }
+
     }
 }

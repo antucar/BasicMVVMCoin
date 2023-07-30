@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<variable
-    name="coin"
-    type="com.example.basicmvvm.model.CoinModel" />
+        <variable
+            name="coin"
+            type="com.example.basicmvvm.model.CoinModel" />
         <variable
             name="listener"
             type="com.example.basicmvvm.adapter.CoinClickListener" />
@@ -42,7 +42,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text='@{coin.maxSupply.toString() != null ? "Max Supply: " + coin.maxSupply.toString : "Max Supply: -"}'
+            android:text='@{"Max Supply: " + coin.maxSupply.toString()}'
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/vwap24Hr" />
@@ -54,7 +54,7 @@
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:text='@{"Supply: " + listener.getFormattedDecimal(coin.supply)}'
+            android:text='@{"Supply: " + coin.supply.toString()}'
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/maxsupply" />
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="16dp"
-            android:text='@{"Volume Weighted Average Price: " + listener.getFormattedDecimal(coin.vwap24Hr)}'
+            android:text='@{"Volume Weighted Average Price: " + coin.vwap24Hr.toString()}'
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="16dp"
-            android:text='@{"Market Cap Usd: " + listener.getFormattedDecimal(coin.marketCapUsd)}'
+            android:text='@{"Market Cap Usd: " + coin.marketCapUsd.toString()}'
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/volumeUsd24Hr" />
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="16dp"
-            android:text='@{"Volume Usd Last 24 Hour:" + listener.getFormattedDecimal(coin.volumeUsd24Hr)}'
+            android:text='@{"Volume Usd Last 24 Hour: " + coin.volumeUsd24Hr.toString()}'
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/changePercent24Hr" />
@@ -100,7 +100,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:text='@{"Change Percent Last 24 Hour: " + listener.getFormattedDecimal(coin.changePercent24Hr)}'
+            android:text='@{"Change Percent Last 24 Hour: " + coin.changePercent24Hr.toString()}'
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/coinname" />
