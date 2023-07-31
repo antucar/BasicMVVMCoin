@@ -1,10 +1,12 @@
 package com.example.basicmvvm.service
 import com.example.basicmvvm.model.CoinModel
+import com.example.basicmvvm.model.MessageModel
 import io.reactivex.rxjava3.core.Single
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import okhttp3.Response as Response1
 
 class CoinApiService {
 
@@ -15,6 +17,8 @@ class CoinApiService {
         .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .build()
         .create(CoinApi::class.java)
+
+
 
     fun getData(): Single<List<CoinModel>> {
         return api.getCoins().map { it.getAsJsonArray("data") }
@@ -41,6 +45,21 @@ class CoinApiService {
                 coinList
             }
     }
+
+
+    private val BaseUrlApi = "gpt.com"
+    private val apiAi = Retrofit.Builder()
+        .baseUrl(BaseUrl)
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+        .build()
+        .create(CoinApi::class.java)
+
+    fun postApi(): Single <List<MessageModel>> {
+        return Response1
+        
+    }
+
+
 
 
 }
