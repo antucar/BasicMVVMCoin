@@ -9,6 +9,5 @@ interface CoinApi {
     @GET("v2/assets")
     fun getCoins(): Single<JsonObject>
 
-    @POST()
-    fun sendMessage(): Single<String>
+
 }

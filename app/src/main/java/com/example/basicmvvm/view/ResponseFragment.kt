@@ -5,18 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.basicmvvm.R
+import com.example.basicmvvm.databinding.FragmentResponseBinding
 import com.example.basicmvvm.viewmodel.AskAIViewModel
+import viewmodel.BaseViewModel
 
 
-class AskAIFragment : Fragment() {
-
+class ResponseFragment : Fragment() {
+    private var responseid: Long = 0
+    private lateinit var binding : FragmentResponseBinding
     private lateinit var viewModel: AskAIViewModel
 
-    private lateinit var response: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +28,8 @@ class AskAIFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ask_a_i, container, false)
-
-
-
-
+        binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_response,container,false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,23 +37,5 @@ class AskAIFragment : Fragment() {
 
         viewModel = ViewModelProvider(requireActivity()).get(AskAIViewModel::class.java)
 
-
-        val messageEditText = view.findViewById<EditText>(R.id.messageai).toString()
-        val button = view.findViewById<Button>(R.id.button)
-
-        button.setOnClickListener {
-            viewModel.giveCoin(messageEditText)
-        }
-
-        observeLiveData()
     }
-
-    private fun observeLiveData() {
-        viewModel.messageinmodel.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-            response = it.chatbotResponse.toString()
-        }
-            )
-    }
-
-
 }

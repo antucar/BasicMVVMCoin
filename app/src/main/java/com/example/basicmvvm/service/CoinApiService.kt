@@ -47,17 +47,7 @@ class CoinApiService {
     }
 
 
-    private val BaseUrlApi = "gpt.com"
-    private val apiAi = Retrofit.Builder()
-        .baseUrl(BaseUrl)
-        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-        .build()
-        .create(CoinApi::class.java)
 
-    fun postApi(): Single <List<MessageModel>> {
-        return Response1
-        
-    }
 
 
 
