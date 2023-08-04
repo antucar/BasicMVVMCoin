@@ -27,7 +27,7 @@ class ResponseFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_response,container,false)
         return binding.root
     }
